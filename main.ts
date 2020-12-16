@@ -33,7 +33,7 @@ new RemoteBackend(stack, {
   hostname: 'app.terraform.io',
   organization: 'prakash_demo_tfc_business',
   workspaces: {
-    name: 'typescript'
+    name: 'cdk-tf-js-gitaction-demo'
   }
 });
 
