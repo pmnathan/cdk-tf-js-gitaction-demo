@@ -71,6 +71,8 @@ jobs:
         node-version: '12'
     - run: npm install -g cdktf-cli
     - run: npm install
+    - run: cdktf get
+    - run: cdktf synth
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
@@ -81,6 +83,7 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
+      working-directory: ./cdktf.out
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
